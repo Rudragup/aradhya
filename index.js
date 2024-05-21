@@ -1,5 +1,2 @@
-let a =document.getElementsByTagName("h2");
-
-function fun(){
-    alert("hiiii")
-}
+let audio =new Audio('w.mp3');
+audio.play();
