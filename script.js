@@ -71,11 +71,11 @@ cards.forEach((card) => observer.observe(card));
 
 /* Typewriter letter */
 const letter =
-  "My love, you chose me — and I chose you. That choice means everything. " +
+  "My Ladoo, you chose me — and I chose you. That choice means everything to Aradhya. " +
   "I failed you when you needed my ears and my heart the most. " +
   "Please give me one more chance to hold your feelings with care, " +
   "to listen without judgment, and to love you the way you deserve. " +
-  "I miss you. I am sorry. I am here — whenever you are ready.";
+  "I miss you, Ladoo. I am sorry. I am here — whenever you are ready. — Aradhya";
 
 const typeEl = document.getElementById("typewriter");
 const letterCard = typeEl.closest(".letter-card");
@@ -109,11 +109,11 @@ letterObserver.observe(letterCard);
 const heartBtn = document.getElementById("heartBtn");
 const toast = document.getElementById("toast");
 const messages = [
-  "I love you more than words can say ♥",
-  "You mean the world to me",
-  "I'm waiting — with open arms and an open heart",
-  "Every day without talking hurts. Please come back to me.",
-  "Your feelings matter. You matter. Always.",
+  "I love you, Ladoo — more than words can say ♥",
+  "You mean the world to me, my Ladoo",
+  "Aradhya is waiting — with open arms and an open heart",
+  "Every day without talking hurts, Ladoo. Please come back to me.",
+  "Your feelings matter. You matter. Always, Ladoo.",
 ];
 
 let msgIndex = 0;
