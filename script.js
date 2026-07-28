@@ -1,6 +1,47 @@
+const PAGE_CONFIG = {
+  apology: {
+    letter:
+      "My Ladoo, you chose me — and I chose you. That choice means everything to Aradhya. " +
+      "I failed you when you needed my ears and my heart the most. " +
+      "Please give me one more chance to hold your feelings with care, " +
+      "to listen without judgment, and to love you the way you deserve. " +
+      "I miss you, Ladoo. I am sorry. I am here — whenever you are ready. — Aradhya",
+    messages: [
+      "I love you, Ladoo — more than words can say ♥",
+      "You mean the world to me, my Ladoo",
+      "Aradhya is waiting — with open arms and an open heart",
+      "Every day without talking hurts, Ladoo. Please come back to me.",
+      "Your feelings matter. You matter. Always, Ladoo.",
+    ],
+    firstCard: ".apology-card",
+  },
+  followup: {
+    letter:
+      "Ladoo, tumne mera message padha — iske liye thank you. " +
+      "Main jaanta hoon reply dena mushkil ho sakta hai jab dil dukhi ho. " +
+      "Par please, mujhe andar mat rakhna. Jo bhi feel ho — gussa, dard, narazgi — sab sununga. " +
+      "Bina judge kiye, bina interrupt kiye. Tum meri wife ho, meri Ladoo ho. " +
+      "Main yahin hoon. Bas ek baar bol do. — Aradhya",
+    messages: [
+      "Ladoo, bas ek 'hi' bhi kaafi hai ♥",
+      "Main wait kar raha hoon — Aradhya",
+      "Tumhari feelings matter karti hain, hamesha",
+      "Gussa ho, naraz ho — phir bhi baat karo na",
+      "I love you, Ladoo. Please reply.",
+      "Ek call? Ek message? Kuch bhi chalega.",
+    ],
+    firstCard: ".followup-card",
+  },
+};
+
+const page = document.body.dataset.page || "apology";
+const config = PAGE_CONFIG[page] || PAGE_CONFIG.apology;
+
 /* Floating rose petals */
 (function initPetals() {
   const canvas = document.getElementById("petals");
+  if (!canvas) return;
+
   const ctx = canvas.getContext("2d");
   let petals = [];
   let w, h;
@@ -70,52 +111,39 @@ const observer = new IntersectionObserver(
 cards.forEach((card) => observer.observe(card));
 
 /* Typewriter letter */
-const letter =
-  "My Ladoo, you chose me — and I chose you. That choice means everything to Aradhya. " +
-  "I failed you when you needed my ears and my heart the most. " +
-  "Please give me one more chance to hold your feelings with care, " +
-  "to listen without judgment, and to love you the way you deserve. " +
-  "I miss you, Ladoo. I am sorry. I am here — whenever you are ready. — Aradhya";
-
 const typeEl = document.getElementById("typewriter");
-const letterCard = typeEl.closest(".letter-card");
-let charIndex = 0;
-let typingStarted = false;
+if (typeEl) {
+  const letterCard = typeEl.closest(".letter-card");
+  let charIndex = 0;
+  let typingStarted = false;
 
-function typeChar() {
-  if (charIndex < letter.length) {
-    typeEl.textContent += letter[charIndex];
-    charIndex++;
-    setTimeout(typeChar, 32);
-  } else {
-    letterCard.classList.add("done");
+  function typeChar() {
+    if (charIndex < config.letter.length) {
+      typeEl.textContent += config.letter[charIndex];
+      charIndex++;
+      setTimeout(typeChar, 32);
+    } else {
+      letterCard.classList.add("done");
+    }
   }
-}
 
-const letterObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && !typingStarted) {
-        typingStarted = true;
-        setTimeout(typeChar, 400);
-      }
-    });
-  },
-  { threshold: 0.4 }
-);
-letterObserver.observe(letterCard);
+  const letterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !typingStarted) {
+          typingStarted = true;
+          setTimeout(typeChar, 400);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  letterObserver.observe(letterCard);
+}
 
 /* Heart button */
 const heartBtn = document.getElementById("heartBtn");
 const toast = document.getElementById("toast");
-const messages = [
-  "I love you, Ladoo — more than words can say ♥",
-  "You mean the world to me, my Ladoo",
-  "Aradhya is waiting — with open arms and an open heart",
-  "Every day without talking hurts, Ladoo. Please come back to me.",
-  "Your feelings matter. You matter. Always, Ladoo.",
-];
-
 let msgIndex = 0;
 
 function showToast(text) {
@@ -138,14 +166,16 @@ function spawnHearts(btn) {
   }
 }
 
-heartBtn.addEventListener("click", () => {
-  spawnHearts(heartBtn);
-  showToast(messages[msgIndex % messages.length]);
-  msgIndex++;
-});
+if (heartBtn) {
+  heartBtn.addEventListener("click", () => {
+    spawnHearts(heartBtn);
+    showToast(config.messages[msgIndex % config.messages.length]);
+    msgIndex++;
+  });
+}
 
 /* Gentle entrance for first card */
 setTimeout(() => {
-  const first = document.querySelector(".apology-card");
+  const first = document.querySelector(config.firstCard);
   if (first) first.classList.add("visible");
 }, 300);

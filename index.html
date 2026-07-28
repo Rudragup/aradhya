@@ -9,10 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="apology">
   <canvas id="petals" aria-hidden="true"></canvas>
   <div class="glow glow-1" aria-hidden="true"></div>
   <div class="glow glow-2" aria-hidden="true"></div>
+
+  <nav class="page-nav">
+    <a href="index.html" class="nav-link active">Page 1 — Sorry</a>
+    <a href="followup.html" class="nav-link">Page 2 — Please reply</a>
+  </nav>
 
   <main class="page">
     <header class="hero">
@@ -80,7 +85,12 @@
         <span class="btn-text">I still love you</span>
         <span class="btn-hearts" aria-hidden="true"></span>
       </button>
-      <p class="tap-hint" id="tapHint">Tap the button — for you, Ladoo ♥</p>
+      <p class="tap-hint">Tap the button — for you, Ladoo ♥</p>
+    </section>
+
+    <section class="card nav-card">
+      <p>Padh liya? <a href="followup.html" class="inline-link">Page 2 pe jao →</a></p>
+      <p class="nav-card-sub">Wahan main tumse ek reply maang raha hoon.</p>
     </section>
 
     <footer class="footer">
