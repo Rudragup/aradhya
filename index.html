@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You, My Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <div class="glow glow-1" aria-hidden="true"></div>
+  <div class="glow glow-2" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">To my wife, my heart</p>
+      <h1>I am truly sorry.</h1>
+      <p class="lead">
+        I know I hurt you. I wasn't there the way you needed me to be —
+        and that is on me, not on you.
+      </p>
+    </header>
+
+    <section class="card apology-card">
+      <div class="card-icon" aria-hidden="true">♥</div>
+      <h2>What I did wrong</h2>
+      <p>
+        You tried to share your feelings with me — your pain, your worries,
+        the things that matter most to you — and I didn't give you the time
+        and space you deserved to say them fully.
+      </p>
+      <p>
+        I was distracted, rushed, or simply not listening with my whole heart.
+        That must have felt lonely. I am deeply sorry for making you feel
+        unheard when all you wanted was to be understood.
+      </p>
+    </section>
+
+    <section class="card promise-card">
+      <h2>What I promise</h2>
+      <ul class="promises">
+        <li>
+          <span class="check">✓</span>
+          I will slow down and truly listen — without interrupting, without rushing you.
+        </li>
+        <li>
+          <span class="check">✓</span>
+          Your feelings are valid. I want to hear every word, even the hard ones.
+        </li>
+        <li>
+          <span class="check">✓</span>
+          I will be present — not just physically, but with my full attention and love.
+        </li>
+        <li>
+          <span class="check">✓</span>
+          You are my wife, my person. Nothing matters more than us finding our way back.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card letter-card">
+      <h2>A letter from my heart</h2>
+      <blockquote id="typewriter"></blockquote>
+    </section>
+
+    <section class="card unblock-card">
+      <div class="pulse-ring" aria-hidden="true"></div>
+      <h2>Please unblock me</h2>
+      <p>
+        I don't want silence between us. I don't want distance to grow where love should be.
+        Please unblock me so we can talk — really talk — face to face, heart to heart.
+      </p>
+      <p class="unblock-sub">
+        I am ready to listen. I am ready to understand. I am ready to make things right.
+      </p>
+      <button type="button" class="btn-heart" id="heartBtn" aria-label="Send love">
+        <span class="btn-text">I still love you</span>
+        <span class="btn-hearts" aria-hidden="true"></span>
+      </button>
+      <p class="tap-hint" id="tapHint">Tap the button — for you ♥</p>
+    </section>
+
+    <footer class="footer">
+      <p>Forever yours,</p>
+      <p class="signature">With all my love</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
