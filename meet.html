@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ladoo — Aaj milo na</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="meet">
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <div class="glow glow-1" aria-hidden="true"></div>
+  <div class="glow glow-2" aria-hidden="true"></div>
+
+  <nav class="page-nav">
+    <a href="index.html" class="nav-link">Page 1 — Sorry</a>
+    <a href="followup.html" class="nav-link">Page 2 — Reply</a>
+    <a href="meet.html" class="nav-link active">Page 3 — Milo aaj</a>
+  </nav>
+
+  <main class="page">
+    <header class="hero">
+      <p class="today-badge">Aaj ka din</p>
+      <p class="eyebrow">Aradhya → Ladoo</p>
+      <h1>Ladoo, aaj milo na.</h1>
+      <p class="lead">
+        Messages se zyada zaroori hai tumhara chehra dekhna, tumhari awaaz sunna,
+        aur tumhare saamne baith kar sab kuch theek karna. Please, aaj aa jao.
+      </p>
+    </header>
+
+    <section class="card meet-card">
+      <div class="card-icon" aria-hidden="true">🤝</div>
+      <h2>Mujhse milna, aaj</h2>
+      <p>
+        Ladoo, phone pe ya message pe sab theek nahi hota. Kabhi-kabhi dil ki baat
+        sirf aankhon mein dekh kar hi samajh aati hai. Main chahta hoon aaj tumse
+        milein — face to face, bina jaldi, bina judge kiye.
+      </p>
+      <p>
+        Tum jo bhi kehna chahti ho — gussa, dard, narazgi, ya bas rona —
+        main sununga. Poora sununga. Aaj sirf tumhari baari hai.
+      </p>
+      <p class="meet-highlight">
+        Aaj aa jao, Ladoo. Main wait kar raha hoon.
+      </p>
+    </section>
+
+    <section class="card promise-card">
+      <h2>Jab miloge, main yeh karunga</h2>
+      <ul class="promises">
+        <li>
+          <span class="check">✓</span>
+          Pehle tum bolna — main chup rahunga aur poori tarah sununga.
+        </li>
+        <li>
+          <span class="check">✓</span>
+          Koi jaldi nahi. Jitna time chahiye, utna lo.
+        </li>
+        <li>
+          <span class="check">✓</span>
+          Koi lecture nahi — sirf samajhna aur maafi maangna.
+        </li>
+        <li>
+          <span class="check">✓</span>
+          Tum comfortable ho wahi jagah — bata dena, main aa jaunga.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card letter-card">
+      <h2>Meri request</h2>
+      <blockquote id="typewriter"></blockquote>
+    </section>
+
+    <section class="card meet-cta-card">
+      <div class="pulse-ring" aria-hidden="true"></div>
+      <h2>Ladoo, aaj mil lo</h2>
+      <p>
+        Reply karo — "haan", "theek hai", ya bas time bata do.
+        Kahan milna hai, kab milna hai — tum decide karo. Main tayyar hoon.
+      </p>
+      <p class="unblock-sub">
+        Tumhari marzi se. Par please, aaj ek chance do — hum dono ke liye.
+      </p>
+      <button type="button" class="btn-heart" id="heartBtn" aria-label="Send love">
+        <span class="btn-text">Haan, milte hain aaj</span>
+        <span class="btn-hearts" aria-hidden="true"></span>
+      </button>
+      <p class="tap-hint">Tap karo, Ladoo — main intezaar kar raha hoon ♥</p>
+    </section>
+
+    <section class="card nav-card">
+      <p>
+        Pehle ke messages:
+        <a href="index.html" class="inline-link">Page 1</a> ·
+        <a href="followup.html" class="inline-link">Page 2</a>
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>Aaj milne ke liye tayyar,</p>
+      <p class="signature">Aradhya</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

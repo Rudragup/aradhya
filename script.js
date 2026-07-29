@@ -32,6 +32,22 @@ const PAGE_CONFIG = {
     ],
     firstCard: ".followup-card",
   },
+  meet: {
+    letter:
+      "Ladoo, aaj ka din khaas banana chahta hoon — tumhare saath. " +
+      "Bahut din ho gaye doori ke. Message pe sab solve nahi hoga, mujhe pata hai. " +
+      "Isliye aaj milo. Tum bolo, main sununga. Tum ro lo, main hug karunga. " +
+      "Tum gussa karo, main maafi maangunga. Bas aaj ek baar mil lo. Please. — Aradhya",
+    messages: [
+      "Aaj mil lo na, Ladoo ♥",
+      "Main tayyar hoon — bas tum bolo",
+      "Jahan comfortable ho, wahan milte hain",
+      "Ek chance aur do — aaj, face to face",
+      "Tumhari jagah, tumhara time — main aa jaunga",
+      "I miss you, Ladoo. Aaj milo.",
+    ],
+    firstCard: ".meet-card",
+  },
 };
 
 const page = document.body.dataset.page || "apology";
